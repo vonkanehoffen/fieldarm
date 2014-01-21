@@ -1,6 +1,7 @@
 <header class="banner container" role="banner">
   <div class="row">
     <div class="col-lg-12">
+      <div class="icon-fieldarm" style="width: 140px; height: 140px;" ></div>
       <a class="brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
       <nav class="nav-main" role="navigation">
         <?php

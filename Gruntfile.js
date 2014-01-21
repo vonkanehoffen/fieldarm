@@ -56,6 +56,16 @@ module.exports = function(grunt) {
         }
       }
     },
+    grunticon: {
+      main: {
+        files: [{
+          expand: true,
+          cwd: 'assets/img/grunticon/src',
+          src: ['*.svg', '*.png'],
+          dest: "assets/img/grunticon/dist"
+        }]
+      }
+    },
     version: {
       options: {
         file: 'lib/scripts.php',
@@ -78,6 +88,10 @@ module.exports = function(grunt) {
           '<%= jshint.all %>'
         ],
         tasks: ['jshint', 'uglify', 'version']
+      },
+      img: {
+        files: ['assets/img/grunticon/src/*'],
+        tasks: ['grunticon']
       },
       livereload: {
         // Browser live reloading
@@ -108,12 +122,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-wp-version');
+  grunt.loadNpmTasks('grunt-grunticon');
 
   // Register tasks
   grunt.registerTask('default', [
     'clean',
     'less',
     'uglify',
+    'grunticon',
     'version'
   ]);
   grunt.registerTask('dev', [
