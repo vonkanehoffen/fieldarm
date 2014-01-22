@@ -27,10 +27,10 @@
 			c-1.909,0-2.655,1.294-2.655,3.138v5.683h-1.975V67.17c0-1.975-0.286-3.379-2.194-3.379c-1.427,0-2.699,1.075-2.699,3.423v5.398
 			h-1.975V62.211z"/>
 	</g>
-	<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="70" cy="70" r="61.358"/>
-	<path fill="none" stroke="#FFFFFF" stroke-linecap="square" stroke-miterlimit="10" d="M6.045,98.495
+	<circle fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" cx="70" cy="70" r="61.358"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M6.045,98.495
 		c9.734-6.494,21.429-10.279,34.009-10.279c28.358,0,52.223,19.236,59.256,45.375"/>
-	<path fill="none" stroke="#FFFFFF" stroke-linecap="square" stroke-miterlimit="10" d="M87.583,110.771
+	<path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M87.583,110.771
 		c10.385-8.064,23.431-12.865,37.598-12.863c2.975,0,5.899,0.212,8.76,0.619"/>
 </g>
 </svg>
