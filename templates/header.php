@@ -1,8 +1,9 @@
 <header class="banner container" role="banner">
   <div class="row">
-    <div class="col-lg-12">
-      <div class="icon-fieldarm" style="width: 140px; height: 140px;" ></div>
-      <a class="brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
+    <div class="col-sm-3">
+      <a class="brand icon-fieldarm" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
+    </div>
+    <div class="col-sm-9">
       <nav class="nav-main" role="navigation">
         <?php
           if (has_nav_menu('primary_navigation')) :
