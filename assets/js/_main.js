@@ -11,6 +11,12 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      $(window).scroll(function() {
+        var st = $(window).scrollTop(), pos;
+        if(st<0) { st = 0; }
+        pos = -(st*0.3);
+        $('.splash-text').css( 'background-position', '0px '+pos+'px' );
+      });
     }
   },
   // Home page
