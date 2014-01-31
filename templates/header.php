@@ -4,13 +4,13 @@
       <a class="brand icon-fieldarm" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
     </div>
     <div class="col-sm-9">
-      <!-- <nav class="nav-main" role="navigation">
+      <nav class="nav-main pull-right" role="navigation">
         <?php
           if (has_nav_menu('primary_navigation')) :
             wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav nav-pills'));
           endif;
         ?>
-      </nav> -->
+      </nav>
     </div>
   </div>
 </header>

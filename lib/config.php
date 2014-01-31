@@ -55,7 +55,8 @@ function roots_display_sidebar() {
      */
     array(
       'is_404',
-      'is_front_page'
+      'is_front_page',
+      'is_page'
     ),
     /**
      * Page template checks (via is_page_template())
@@ -77,3 +78,14 @@ function roots_display_sidebar() {
  * Default: 1140px is the default Bootstrap container width.
  */
 if (!isset($content_width)) { $content_width = 1140; }
+
+/**
+ * Set WPCF7 form class for Bootstrap
+ */
+
+add_filter( 'wpcf7_form_class_attr', 'bootstrap_form_class_attr' );
+function bootstrap_form_class_attr( $class ) {
+  $class .= ' form-horizontal';
+  return $class;
+}
+

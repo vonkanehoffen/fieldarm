@@ -37,10 +37,20 @@ body {
    margin-top: 20px;
    text-indent:-9999px;
 }
-.nav-main {
-   margin-top: 20px;
-   text-transform: uppercase;
-   color:#000;
+#menu-primary-navigation {
+   margin: 50px 0;
+   font-size: 18px;
+   // text-transform: uppercase;
+   a {
+      color:#333;
+   }
+   li.active a   {
+      color: #fff;
+      background: tint(@green, 50%);
+   }
+   li a:hover {
+      background: tint(@green, 90%);
+   }
 }
 
 
@@ -92,8 +102,13 @@ body {
    Sidebar
    ========================================================================== */
 
-.sidebar { }
-
+.sidebar { 
+   padding: 0 30px 0 0;
+}
+.sidebar-img {
+   border-radius: 10px;
+   width: 100%;
+}
 
 
 /* ==========================================================================
@@ -126,7 +141,7 @@ body {
 .linkedin {
    width: 128px;
    height: 34px;
-   margin: (70-34)/2px 30px;
+   margin: (70-34)/2px 0;
    display: block;
    float: right;
    span { display: none; }
