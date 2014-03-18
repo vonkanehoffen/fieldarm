@@ -17,7 +17,8 @@ module.exports = function(grunt) {
         files: {
           'assets/css/main.min.css': [
             'assets/less/app.less'
-          ]
+          ],
+          'assets/css/login.min.css': ['assets/less/login.less']
         },
         options: {
           compress: true,
