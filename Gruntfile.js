@@ -34,12 +34,12 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/js/scripts.min.js': [
-            'assets/js/plugins/bootstrap/transition.js',
+            'assets/js/plugins/bootstrap/transition.js', // Used in customer-area
             'assets/js/plugins/bootstrap/alert.js',
             'assets/js/plugins/bootstrap/button.js',
             'assets/js/plugins/bootstrap/carousel.js',
-            'assets/js/plugins/bootstrap/collapse.js',
-            'assets/js/plugins/bootstrap/dropdown.js',
+            'assets/js/plugins/bootstrap/collapse.js', // Used in customer-area
+            'assets/js/plugins/bootstrap/dropdown.js', // Used in customer-area
             'assets/js/plugins/bootstrap/modal.js',
             'assets/js/plugins/bootstrap/tooltip.js',
             'assets/js/plugins/bootstrap/popover.js',
