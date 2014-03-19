@@ -24,6 +24,7 @@ function roots_widgets_init() {
 
   // Widgets
   register_widget('Roots_Vcard_Widget');
+  register_widget('WP_Pills_Nav_Menu_Widget');
 }
 add_action('widgets_init', 'roots_widgets_init');
 
@@ -129,5 +130,78 @@ class Roots_Vcard_Widget extends WP_Widget {
     </p>
     <?php
     }
+  }
+}
+
+
+
+/**
+ * Bootstrap Pills Nav Widget
+ * Customised Navigation Menu widget class
+ *
+ * @since 3.0.0
+ */
+ class WP_Pills_Nav_Menu_Widget extends WP_Widget {
+
+  function __construct() {
+    $widget_ops = array( 'description' => __('Add a custom Bootstrap Pills menu to your sidebar.') );
+    parent::__construct( 'bsp_nav_menu', __('Bootstrap Pills Custom Menu'), $widget_ops );
+  }
+
+  function widget($args, $instance) {
+    // Get menu
+    $nav_menu = ! empty( $instance['bsp_nav_menu'] ) ? wp_get_nav_menu_object( $instance['bsp_nav_menu'] ) : false;
+
+    if ( !$nav_menu )
+      return;
+
+    $instance['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+
+    echo $args['before_widget'];
+
+    if ( !empty($instance['title']) )
+      echo $args['before_title'] . $instance['title'] . $args['after_title'];
+
+    wp_nav_menu( array( 'fallback_cb' => '', 'menu' => $nav_menu, 'menu_class' => 'nav nav-pills nav-stacked' ) );
+
+    echo $args['after_widget'];
+  }
+
+  function update( $new_instance, $old_instance ) {
+    $instance['title'] = strip_tags( stripslashes($new_instance['title']) );
+    $instance['bsp_nav_menu'] = (int) $new_instance['bsp_nav_menu'];
+    return $instance;
+  }
+
+  function form( $instance ) {
+    $title = isset( $instance['title'] ) ? $instance['title'] : '';
+    $nav_menu = isset( $instance['bsp_nav_menu'] ) ? $instance['bsp_nav_menu'] : '';
+
+    // Get menus
+    $menus = wp_get_nav_menus( array( 'orderby' => 'name' ) );
+
+    // If no menus exists, direct the user to go and create some.
+    if ( !$menus ) {
+      echo '<p>'. sprintf( __('No menus have been created yet. <a href="%s">Create some</a>.'), admin_url('nav-menus.php') ) .'</p>';
+      return;
+    }
+    ?>
+    <p>
+      <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:') ?></label>
+      <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id('bsp_nav_menu'); ?>"><?php _e('Select Menu:'); ?></label>
+      <select id="<?php echo $this->get_field_id('bsp_nav_menu'); ?>" name="<?php echo $this->get_field_name('bsp_nav_menu'); ?>">
+    <?php
+      foreach ( $menus as $menu ) {
+        echo '<option value="' . $menu->term_id . '"'
+          . selected( $nav_menu, $menu->term_id, false )
+          . '>'. $menu->name . '</option>';
+      }
+    ?>
+      </select>
+    </p>
+    <?php
   }
 }
