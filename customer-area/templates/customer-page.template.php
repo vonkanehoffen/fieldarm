@@ -12,12 +12,12 @@
 	?></div>
 	
 	<div class="row">
-		<div class="cuar-page-content col-sm-8 col-sm-push-4"><?php 
+		<div class="cuar-page-content col-sm-9 col-sm-push-3"><?php 
 			$this->print_page_content( $args, $shortcode_content ); 
 		?></div>
 		
 		<?php if ( $this->has_page_sidebar() ) : ?>	
-		<div class="cuar-page-sidebar col-sm-4 col-sm-pull-8"><?php 
+		<div class="cuar-page-sidebar col-sm-3 col-sm-pull-9"><?php 
 			$this->print_page_sidebar( $args, $shortcode_content ); 
 		?></div>	
 		<?php endif; ?>
