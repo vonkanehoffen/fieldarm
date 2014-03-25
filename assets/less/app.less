@@ -11,13 +11,16 @@
    Base
    ========================================================================== */
 
-body, h1, h2, h3, h4, h5, h6 { 
+h1, h2, h3, h4, h5, h6 { 
    font-family: 'sofia_pro_lightregular';
 }
 body {
    background: @green url('../img/grass.jpg') top center repeat;
    text-rendering: optimizelegibility;
    -webkit-font-smoothing: antialiased;
+}
+a {
+   color: @green;
 }
 
 
@@ -122,6 +125,17 @@ body {
 .hentry .entry-content { }
 .hentry footer { }
 
+
+/* ==========================================================================
+   Customer Area
+   ========================================================================== */
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+   background-color: tint(@green, 50%);
+}
+.nav>li>a:hover, .nav>li>a:focus {
+   background-color: tint(@green, 90%);   
+}
 
 
 /* ==========================================================================
