@@ -11,7 +11,7 @@
    Base
    ========================================================================== */
 
-h1, h2, h3, h4, h5, h6 { 
+h1 { 
    font-family: 'sofia_pro_lightregular';
 }
 body {
@@ -135,6 +135,21 @@ a {
 }
 .nav>li>a:hover, .nav>li>a:focus {
    background-color: tint(@green, 90%);   
+}
+.download-link {
+   text-align: right;
+}
+.meta {
+   color: @text-muted;
+   .glyphicon { margin-right: 5px; }
+}
+.page-icon {
+   text-align: center;
+   padding-bottom: 20px;
+   .glyphicon {
+      font-size: 150px;
+      color: tint(@green, 50%);      
+   }
 }
 
 

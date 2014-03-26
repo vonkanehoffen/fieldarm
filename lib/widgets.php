@@ -22,6 +22,15 @@ function roots_widgets_init() {
     'after_title'   => '</h3>',
   ));
 
+  register_sidebar(array(
+    'name'          => __('Customer Area Sidebar - Account', 'roots'),
+    'id'            => 'customer-account-sidebar',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ));
+
   // Widgets
   register_widget('Roots_Vcard_Widget');
   register_widget('WP_Pills_Nav_Menu_Widget');

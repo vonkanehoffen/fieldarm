@@ -8,7 +8,7 @@
 <div class="cuar-page <?php echo implode( ' ', $page_classes ); ?>">
 
 	<div class="cuar-page-header"><?php 
-		$this->print_page_header( $args, $shortcode_content ); 
+		$this->print_page_header( $args, $shortcode_content );
 	?></div>
 	
 	<div class="row">
@@ -20,6 +20,10 @@
 		<div class="cuar-page-sidebar col-sm-3 col-sm-pull-9"><?php 
 			$this->print_page_sidebar( $args, $shortcode_content ); 
 		?></div>	
+		<?php else : ?>
+		<div class="col-sm-3 col-sm-pull-9">
+			<?php dynamic_sidebar( $this->get_sidebar_id() ); ?>
+		</div>
 		<?php endif; ?>
 	</div>
 	<div class="cuar-page-footer"><?php 
