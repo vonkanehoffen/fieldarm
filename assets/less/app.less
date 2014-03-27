@@ -101,7 +101,7 @@ a {
    ========================================================================== */
 
 .main { 
-   padding: 0 30px;
+   padding: 0 30px 60px 30px;
 }
 
 /* Gallery Shortcode */
@@ -165,25 +165,37 @@ a {
    ========================================================================== */
 
 .content-info { 
-   background: #fff;
+   background: @green;
    margin-bottom: 60px;
    padding: 30px;
-   color:#999;
+   color:#fff;
 }
 .footer-logo {
    width: 70px;
    height: 70px;
    float: right;
 }
-.linkedin {
-   width: 128px;
-   height: 34px;
-   margin: (70-34)/2px 0;
-   display: block;
-   float: right;
-   span { display: none; }
+.footer-right {
+   text-align: right;
+   .small {
+      font-size: 0.8em;
+   }
 }
-
+.linkedin {
+   > span { padding-right:10px; }
+   .icon-linkedin {
+      width: 128px;
+      height: 34px;
+      display: inline-block;
+      vertical-align: middle;
+      span { display: none; }
+   }
+}
+.icon-cert-logos {
+   display: block;
+   width: 297px;
+   height: 61px;
+}
 
 
 /* ==========================================================================
