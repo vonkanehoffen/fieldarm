@@ -10,6 +10,16 @@ function fieldarm_login_stylesheet() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'fieldarm_login_stylesheet' );
 
+function my_login_logo_url() {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'FieldArm';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
 
 // Fix compatibitlity issues with Customer Area plugin. 
 // BS plugins were being loaded twice.
