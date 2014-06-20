@@ -37,11 +37,18 @@ a {
    display: block;
    width: 140px;
    height: 140px;
-   margin-top: 20px;
+   margin: 20px auto 0 auto;
    text-indent:-9999px;
 }
+.nav-main {
+   text-align: center;
+}
+.nav>li {
+   float: none;
+   display: inline-block;
+}
 #menu-primary-navigation {
-   margin: 50px 0;
+   margin: 15px auto 0 auto;
    font-size: 18px;
    // text-transform: uppercase;
    a {
@@ -215,7 +222,7 @@ h3 .fa {
    float: right;
 }
 .footer-right {
-   text-align: right;
+   text-align: left;
    .small {
       font-size: 0.8em;
    }
@@ -253,7 +260,24 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm-min) { }
+@media (min-width: @screen-sm-min) {
+   .nav-main {
+      float: right;
+   }
+   .nav>li {
+      float: left;
+      display: block;
+   }
+   .brand {
+      margin: 20px 0 0 0;
+   }
+   #menu-primary-navigation {
+      margin: 50px 0;
+   }
+   .footer-right {
+      text-align: right;
+   }
+}
 
 @media (min-width: @screen-md-min) { }
 

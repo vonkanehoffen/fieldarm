@@ -1,7 +1,8 @@
 <footer class="content-info container" role="contentinfo">
   <div class="row">
     <div class="col-sm-7">
-      <p>Regulated by:</p> <div class="icon-cert-logos"></div>
+      <p>Regulated by:</p>
+      <img src="<?php echo get_relative_template_dir(); ?>/assets/img/cert-logos.png" alt="HSE / Department of Agriculture and Rural Development" class="img-responsive" style="margin-bottom:30px;">
     </div>
     <div class="col-sm-5 footer-right">
       <?php dynamic_sidebar('sidebar-footer'); ?>
