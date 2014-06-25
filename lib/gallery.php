@@ -5,6 +5,8 @@
  * Re-create the [gallery] shortcode and use thumbnails styling from Bootstrap
  * The number of columns must be a factor of 12.
  *
+ * NOTE: This isn't bootstrap any more... custom. - Kane
+ *
  * @link http://getbootstrap.com/components/#thumbnails
  */
 function roots_gallery($attr) {
