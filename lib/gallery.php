@@ -90,14 +90,14 @@ function roots_gallery($attr) {
         $image = wp_get_attachment_link($id, $size, false, false);
         break;
       case 'none':
-        $image = wp_get_attachment_image($id, $size, false, array('class' => 'thumbnail img-thumbnail'));
+        $image = wp_get_attachment_image($id, $size, false, array('class' => 'gallery-thumbnail'));
         break;
       default:
         $image = wp_get_attachment_link($id, $size, true, false);
         break;
     }
-    $output .= ($i % $columns == 0) ? '<div class="row gallery-row">': '';
-    $output .= '<div class="' . $grid .'">' . $image;
+    $output .= ($i % $columns == 0) ? '<div class="gallery-row">': '';
+    $output .= '<div class="gallery-item">' . $image;
 
     if (trim($attachment->post_excerpt)) {
       $output .= '<div class="caption hidden">' . wptexturize($attachment->post_excerpt) . '</div>';
@@ -120,11 +120,11 @@ if (current_theme_supports('bootstrap-gallery')) {
 }
 
 /**
- * Add class="thumbnail img-thumbnail" to attachment items
+ * Add class="gallery-thumbnail" to attachment items
  */
 function roots_attachment_link_class($html) {
   $postid = get_the_ID();
-  $html = str_replace('<a', '<a class="thumbnail img-thumbnail"', $html);
+  $html = str_replace('<a', '<a class="gallery-thumbnail"', $html);
   return $html;
 }
 add_filter('wp_get_attachment_link', 'roots_attachment_link_class', 10, 1);
